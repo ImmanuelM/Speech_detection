@@ -10,7 +10,7 @@ Variance = sqrt(var(x));
 x  = x./sqrt(var(x));
 [alp,beta,mean] = alp_beta(x');
 lags = 50;
-acf(x,lags);
+X = autocorr(x,lags);
 ZCD = Zero_crossing_counter(X);
 
 if 5 < ZCD && ZCD < 12 && Variance > 0.02
